@@ -171,3 +171,33 @@ footer {
   margin-top: 30px;
   border-top: 1px solid #00c853;
 }
+.payment-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background: #0d1b2a;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+}
+
+.payment-container img.qr-image {
+  width: 200px;
+  margin: 20px 0;
+}
+
+.payment-container input[type="file"] {
+  margin: 10px 0;
+}
+
+.payment-container button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #00ff99, #0077ff);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
