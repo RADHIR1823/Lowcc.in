@@ -1,72 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LowCC - AI Master Class Credit Cards</title>
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Firebase SDK + Init -->
-  <script type="module" src="firebase.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LowCC.in - AI Master Class Cards</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">LowCC.in</div>
+  <!-- Header -->
+  <header>
+    <h1>LowCC.in</h1>
     <nav>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#cards">Cards</a></li>
-        <li><a href="#login">Login</a></li>
-      </ul>
+      <button id="loginBtn">Login</button>
+      <button id="signupBtn">Signup</button>
+      <button id="logoutBtn" style="display:none;">Logout</button>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>AI Master Class Credit Cards</h1>
-      <p>Exclusive Digital Credit Cards with Huge Balance Value</p>
-      <a href="#cards" class="btn">Browse Cards</a>
-    </div>
+  <!-- Login Form -->
+  <section id="loginSection" class="form-section">
+    <h2>Login</h2>
+    <input type="email" id="loginEmail" placeholder="Enter Email">
+    <input type="password" id="loginPassword" placeholder="Enter Password">
+    <button id="loginSubmit">Login</button>
+    <p>or</p>
+    <button id="googleLogin">Login with Google</button>
+    <button id="phoneLogin">Login with Phone</button>
   </section>
 
-  <!-- Cards Section -->
-  <section id="cards" class="cards-section">
+  <!-- Signup Form -->
+  <section id="signupSection" class="form-section" style="display:none;">
+    <h2>Signup</h2>
+    <input type="email" id="signupEmail" placeholder="Enter Email">
+    <input type="password" id="signupPassword" placeholder="Enter Password">
+    <button id="signupSubmit">Signup</button>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="dashboard" style="display:none;">
     <h2>Available Cards</h2>
-    <div class="card-container" id="card-list">
-      <!-- Cards come from Firestore -->
+    <div id="cardsContainer" class="cards-container">
+      <!-- Cards will be loaded here dynamically from Firestore -->
     </div>
   </section>
 
-  <!-- Login / Signup Section -->
-  <section id="login" class="login-section">
-    <h2>Login / Signup</h2>
-    <form id="login-form" class="login-form">
-      <input type="email" id="email" placeholder="Email" required />
-      <input type="password" id="password" placeholder="Password" required />
-      <button type="submit" class="btn">Login</button>
-      <p class="alt-login">Or</p>
-      <button type="button" id="signup-btn" class="btn btn-secondary">Sign Up</button>
-    </form>
-    <button id="google-login" class="btn google-btn">Login with Google</button>
+  <!-- Payment Upload Section -->
+  <section id="paymentSection" style="display:none;">
+    <h2>Upload Payment Receipt</h2>
+    <p>Scan the QR code and make payment, then upload receipt.</p>
+    <img src="qr-code.png" alt="Payment QR Code" class="qr-code">
+    <input type="file" id="receiptUpload" accept="image/*">
+    <button id="uploadReceiptBtn">Upload Receipt</button>
   </section>
-
-  <!-- Upload Receipt Modal -->
-  <div id="receipt-modal" class="modal">
-    <div class="modal-content">
-      <span id="close-modal" class="close">&times;</span>
-      <h3>Upload Payment Receipt</h3>
-      <input type="file" id="receipt-file" />
-      <button id="upload-receipt-btn" class="btn">Upload</button>
-    </div>
-  </div>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 LowCC.in | All Rights Reserved</p>
+    <p>© 2025 LowCC.in | AI Master Class Credit Cards</p>
   </footer>
 
+  <!-- Firebase + App Scripts -->
+  <script type="module" src="firebase.js"></script>
   <script type="module" src="script.js"></script>
 </body>
 </html>
